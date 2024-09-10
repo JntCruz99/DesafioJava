@@ -18,7 +18,7 @@ public class Item {
     @Column
     private double preco;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pedido_id")
     @JsonIgnore
     private Pedido pedido;

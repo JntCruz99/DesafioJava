@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 public class Cliente {
@@ -18,8 +20,7 @@ public class Cliente {
     @Column
     private int idade;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "pedido_id")
+    @OneToMany(mappedBy = "cliente",cascade = CascadeType.ALL)
     @JsonIgnore
-    private Pedido pedido;
+    private List<Pedido> pedidoList;
 }

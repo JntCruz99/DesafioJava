@@ -7,5 +7,13 @@ import java.util.List;
 
 public interface ClienteService {
 
-    ResponseEntity<List<Cliente>> findAll();
+    List<Cliente> findAll();
+
+    Cliente save(Cliente cliente);
+
+    Cliente findById(Long idCliente);
+
+    Cliente update(Long idClente, Cliente clienteAtual);
+
+    void delete(Long idCliente);
 }

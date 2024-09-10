@@ -8,5 +8,13 @@ import java.util.List;
 
 public interface ItemService {
 
-    ResponseEntity<List<Item>> findAll();
+    List<Item> findAll();
+
+    Item findById(Long idItem);
+
+    Item save(Item item);
+
+    Item update(Long idItem, Item itemAtual);
+
+    void delete(Long idItem);
 }
